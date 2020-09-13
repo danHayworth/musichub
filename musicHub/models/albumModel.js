@@ -6,7 +6,7 @@ var AlbumSchema = new Schema(
       "name": {type: String, required: true, maxlength: 100},
       "year": {type: String, required: true},
       "songs": [{type: Schema.Types.ObjectId, ref: 'Song'}],
-      "artists": [{type: Schema.Types.ObjectId, ref: 'Artist'}]
+      "artist": [{type: Schema.Types.ObjectId, ref: 'Artist'}]
     }
   );
 

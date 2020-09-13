@@ -60,4 +60,17 @@ router.get('/artist/:id', artist_controller.artist_detail);
 router.get('/artists', artist_controller.artist_list);
 
 
+//Albums
+
+router.get('/album/create', album_controller.album_create_get);
+
+// POST request for creating artist.
+router.post('/album/create', album_controller.album_create_post);
+
+// GET request for one artist.
+router.get('/album/:id', album_controller.album_detail);
+
+// GET request for list of all artists.
+router.get('/albums', album_controller.album_list);
+
 module.exports = router;

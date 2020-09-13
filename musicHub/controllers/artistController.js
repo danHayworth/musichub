@@ -72,12 +72,10 @@ exports.artist_create_post = [
 
             // Create an Artist object with escaped and trimmed data.
             var artist = new Artist(
-                {
-        
+                {       
                     name: req.body.name,
                     description: req.body.description,
-                    imageUrl: req.body.imageUrl
-                   
+                    imageUrl: req.body.imageUrl                  
                 });
             artist.save(function (err) {
                 if (err) { return next(err); }

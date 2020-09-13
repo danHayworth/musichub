@@ -72,7 +72,7 @@ exports.song_create_get = function(req, res) {
         },
     }, function(err, results) {
         if (err) { return next(err); }
-        res.render('song_form', { title: 'Create Song', artists: results.artists, length: results.length });
+        res.render('song_form', { title: 'Create Song', artists: results.artists});
     });
 };
 

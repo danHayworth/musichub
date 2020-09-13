@@ -8,7 +8,7 @@ block content
       li 
         a(href=album.url) #{album.name} 
         | #{album.artist.name}
-        | #{album.song.title}
+        | #[album.song.title]
 
     else
       li There are no albums.
