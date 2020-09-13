@@ -32,7 +32,7 @@ exports.artist_detail = function(req, res, next) {
             return next(err);
         }
         // Successful, so render.
-        res.render('artist_detail', { title: results.artist.artistName, artist: results.artist, artist_songs: results.artist_songs } );
+        res.render('artist_detail', { title: results.artist.artistName, artist: results.artist, artist_songs: results.artist_songs} );
     });
 
 };

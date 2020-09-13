@@ -7,8 +7,7 @@ var ArtistSchema = new Schema(
       "name": {type: String, required: true, maxlength: 100},
       "description": {type: String, required: true, maxlength: 1000},
       "imageUrl": {type: String},
-      "song":[{type: Schema.Types.ObjectId, ref: 'Song', required: false}],
-      "album":[{type: Schema.Types.ObjectId, ref: 'Album', required: false}]
+      "song":[{type: Schema.Types.ObjectId, ref: 'Song', required: false}]
     }
   );
 

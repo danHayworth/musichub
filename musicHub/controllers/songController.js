@@ -1,6 +1,6 @@
 var Song = require('../models/songModel')
 var Artist = require('../models/artistModel');
-var Album = require('../models/albumModel');
+
 const { body,check, validationResult } = require('express-validator');
 
 
@@ -15,9 +15,6 @@ exports.index = function(req, res) {
         artist_count: function(callback) {
             Artist.countDocuments({}, callback);
         },
-        album_count: function(callback) {
-            Album.countDocuments({}, callback);
-        }
     }, function(err, results) {
         res.render('index', { title: 'Music Hub Home', error: err, data: results });
     });
@@ -47,7 +44,8 @@ exports.song_detail = function(req, res, next) {
         artist: function(callback){
             Artist.find({'name':req.params.id})
             .exec(callback)
-        }
+        },
+
 
     }, function(err, results) {
         if (err) { return next(err); }
