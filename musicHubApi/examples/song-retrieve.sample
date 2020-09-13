@@ -1,0 +1,15 @@
+{
+  "songId": "550e8400446655440000",
+  "songTitle": "A Celtic Dream",
+  "duration": "1:43",
+  "artist": {
+    "artistId": "110e8300664400445500",
+    "artistName": "Michele McLaughlin",
+    "imageURL": "https://cdn.shopify.com/s/files/1/0011/2394/2451/files/IMG_4706a_fav_web_500x.jpg?v=1521599775"
+  },
+  "album": {
+    "albumId": "183100e366104d440550",
+    "albumName": "A Celtic Dream",
+    "imageURL": "https://f4.bcbits.com/img/a2050517431_10.jpg"
+  }
+}

@@ -1,0 +1,19 @@
+extends layout
+
+block content
+
+  h1 #{title}: #{song.title}
+  
+  p #[strong Author:] 
+    a(href=song.artist.url) #{song.artist.name}
+  p #[strong length:] #{song.length}
+ 
+
+ 
+    p Do you really want to delete this song?
+
+    form(method='POST' action='')
+        div.form-group
+        input#id.form-control(type='hidden',name='id', required='true', value=song._id )
+
+        button.btn.btn-primary(type='submit') Delete

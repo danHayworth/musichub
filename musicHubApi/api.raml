@@ -1,0 +1,147 @@
+#%RAML 1.0
+title: Music Hub
+version: v1
+baseUri: http://api.localhost:8888
+
+#protocols: HTTPS
+mediaType: application/json
+securedBy: [oauth_2_0]
+securitySchemes:
+  - oauth_2_0: !include security/oauth2.raml
+
+types:
+  song: !include schemas/song.schema
+  artist: !include schemas/artist.schema
+  album: !include schemas/album.schema
+
+resourceTypes:
+  readOnlyCollection:
+    description: Collection of available <<resourcePathName>> in Music Hub.
+    get:
+      description: Get a list of <<resourcePathName>>.
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                <<exampleCollection>>
+  collection:
+    description: Collection of available <<resourcePathName>> in Music Hub.
+    get:
+      description: Get a list of <<resourcePathName>>.
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                <<exampleCollection>>
+    post:
+      description: |
+        Add a new <<resourcePathName|!singularize>> to Music Hub.
+      queryParameters:
+        access_token:
+          description: "The access token provided by the authentication application"
+          example: AABBCCDD
+          required: true
+          type: string
+      body:
+        application/json:
+          type: <<resourcePathName|!singularize>>
+          example: |
+            <<exampleItem>>
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                { "message": "The <<resourcePathName|!singularize>> has been properly entered" }
+  collection-item:
+    description: Entity representing a <<resourcePathName|!singularize>>
+    get:
+      description: |
+        Get the <<resourcePathName|!singularize>>
+        with <<resourcePathName|!singularize>>Id =
+        {<<resourcePathName|!singularize>>Id}
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                <<exampleItem>>
+        404:
+          body:
+            application/json:
+              example: |
+                {"message": "<<resourcePathName|!singularize>> not found" }
+
+traits:
+  searchable:
+    queryParameters:
+      query:
+        description: |
+          JSON array [{"field1","value1","operator1"},{"field2","value2","operator2"},...,{"fieldN","valueN","operatorN"}] <<description>>
+        example: |
+          <<example>>
+
+/songs:
+  type:
+    collection:
+      exampleCollection: !include examples/songs.sample
+  get:
+    is:
+          searchable: {description: "with valid searchable fields: songTitle", example: "[\"songTitle\", \"A Celtic\", \"like\"]"}
+
+  /{songId}:
+    type:
+      collection-item:
+        exampleItem: !include examples/song-retrieve.sample
+    /file-content:
+      description: The file to be reproduced by the client
+      get:
+        description: Get the file content
+        responses:
+          200:
+            body:
+              application/octet-stream:
+                example:
+                  !include resources/A Celtic Dream.mp3
+
+
+/artists:
+  type:
+    collection:
+      exampleCollection: !include examples/artists.sample
+  get:
+    is:
+      searchable: {description: "with valid searchable fields: artistName", example: "[\"artistName\", \"Michele\", \"equals\"]"}
+
+  /{artistId}:
+    type:
+      collection-item:
+        exampleItem: !include examples/artist-retrieve.sample
+    /albums:
+      type:
+        readOnlyCollection:
+          exampleCollection: !include examples/artists-albums.sample
+      description: Collection of albulms belonging to the artist
+      get:
+        description: Get a specific artist's albums list
+
+/albums:
+  type:
+    collection:
+      exampleCollection: !include examples/albums.sample
+  get:
+    is:
+      searchable: {description: "with valid searchable fields: albumName", example: "[\"albumName\", \"A Celtic\", \"equals\"]"}
+
+  /{albumId}:
+    type:
+      collection-item:
+        exampleItem: !include examples/album-retrieve.sample
+    /songs:
+      type:
+        readOnlyCollection:
+          exampleCollection: !include examples/album-songs.sample
+      get:
+        description: Get the list of songs for the album with `albumId = {albumId}`

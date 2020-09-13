@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='title') Title:
+      input#title.form-control(type='text', placeholder='Name of song' name='title'  value=(undefined===song ? '' : song.title ) required='true')
+    div.form-group
+      label(for='artist') Artist:
+      select#name.form-control(type='select' placeholder='Select artist' name='name' required='true' )
+        for artist in artists
+          if song
+            option(
+              value=artist._id
+              selected=( selected_artist==song.artist._id.toString() ? 'selected': false)) #{artist.name}
+          else
+            option(value=artist._id) #{artist.name}
+    div.form-group
+      label(for='length') Length:
+      input#length.form-control(type='text', placeholder='Length of the song 00:00' name='length'  value=(undefined===song ? '' : song.length) required='true')
+      
+    button.btn.btn-primary(type='submit') Submit
+    
+
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg

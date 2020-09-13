@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 Title: #{song.title}
+  
+  p #[strong Artist:] #{song.artist.name}
+
+   
+  p #[strong Length:] #{song.length}
+  
+
+    hr
+    p
+      a(href=song.url+'/delete') Delete Song
+    p
+      a(href=song.url+'/update') Update Song

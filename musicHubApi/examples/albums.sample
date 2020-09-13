@@ -1,0 +1,20 @@
+[
+  {
+    "albumId": "183100e366104d440550",
+    "albumName": "A Celtic Dream",
+    "imageURL": "https://f4.bcbits.com/img/a2050517431_10.jpg",
+    "artistId": "110e8300664400445500"
+  },
+  {
+    "albumId": "183100e366111d4de520",
+    "albumName": "OK Computer",
+    "imageURL": "http://www.greenplastic.com/dev/wp-content/uploads/2010/12/ok-computer.jpg",
+    "artistId": "11032be3664400a71600"
+  },
+  {
+    "albumId": "183100e363204d64coda",
+    "albumName": "The Dark Side of the Moon",
+    "imageURL": "http://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png",
+    "artistId": "110e8300229932554400"
+  }
+]

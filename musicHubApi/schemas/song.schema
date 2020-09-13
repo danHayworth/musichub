@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "required": true,
+  "properties": {
+    "_id": {
+      "type": "string",
+      "required": true,
+      "minLength": 36,
+      "maxLength": 36
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "length": {
+      "type": "string",
+      "required": true,
+      "minLength": 36,
+      "maxLength": 36
+    }
+    ,
+    "album": {
+      "type": "string",
+      "required": true,
+      "minLength": 36,
+      "maxLength": 36
+    }
+  }
+}

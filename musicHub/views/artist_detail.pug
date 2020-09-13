@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+  h1 Artist: #{artist.name}
+  a(href=artist.imageUrl) Artist image
+  
+  
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Songs
+    
+    dl
+      each song in artist_songs
+        dt 
+          a(href=song.url) #{song.title}
+     
+      else
+        p This artist has no songs.
+    hr
+    p
+      a(href=artist.url+'/delete') Delete artist
+    p
+      a(href=artist.url+'/update') Update artist

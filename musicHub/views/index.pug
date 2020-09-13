@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #[em Music Hub], a very basic Express API created by Dan Hayworth.
+
+  h1 Dynamic content
+
+  if error
+    p Error getting dynamic content.
+  else
+    p The library has the following record counts:
+
+    ul
+      li #[strong Song:] !{data.song_count}
+      li #[strong Artists:] !{data.artist_count}
+      li #[strong Albums:] !{data.album_count}
