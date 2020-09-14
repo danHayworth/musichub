@@ -13,18 +13,16 @@
       "type": "string",
       "required": true
     },
+    "artist": {
+      "type": "string",
+      "required": true
+    },
     "length": {
       "type": "string",
       "required": true,
       "minLength": 36,
       "maxLength": 36
     }
-    ,
-    "album": {
-      "type": "string",
-      "required": true,
-      "minLength": 36,
-      "maxLength": 36
-    }
+
   }
 }

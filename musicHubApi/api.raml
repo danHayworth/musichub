@@ -1,7 +1,7 @@
 #%RAML 1.0
 title: Music Hub
 version: v1
-baseUri: http://api.localhost:8888
+baseUri: http://api.localhost:3000
 
 #protocols: HTTPS
 mediaType: application/json
@@ -12,7 +12,7 @@ securitySchemes:
 types:
   song: !include schemas/song.schema
   artist: !include schemas/artist.schema
-  album: !include schemas/album.schema
+
 
 resourceTypes:
   readOnlyCollection:
@@ -119,29 +119,3 @@ traits:
     type:
       collection-item:
         exampleItem: !include examples/artist-retrieve.sample
-    /albums:
-      type:
-        readOnlyCollection:
-          exampleCollection: !include examples/artists-albums.sample
-      description: Collection of albulms belonging to the artist
-      get:
-        description: Get a specific artist's albums list
-
-/albums:
-  type:
-    collection:
-      exampleCollection: !include examples/albums.sample
-  get:
-    is:
-      searchable: {description: "with valid searchable fields: albumName", example: "[\"albumName\", \"A Celtic\", \"equals\"]"}
-
-  /{albumId}:
-    type:
-      collection-item:
-        exampleItem: !include examples/album-retrieve.sample
-    /songs:
-      type:
-        readOnlyCollection:
-          exampleCollection: !include examples/album-songs.sample
-      get:
-        description: Get the list of songs for the album with `albumId = {albumId}`

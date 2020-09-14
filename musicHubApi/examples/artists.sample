@@ -1,20 +1,20 @@
 [
   {
-    "artistId": "110e8300664400445500",
-    "artistName": "Michele McLaughlin",
+    "_id": "110e8300664400445500",
+    "name": "Michele McLaughlin",
     "description": "Michele McLaughlin is an American New-age music Billboard charts pianist and composer. ",
     "imageURL": "https://cdn.shopify.com/s/files/1/0011/2394/2451/files/IMG_4706a_fav_web_500x.jpg?v=1521599775"
 
   },
   {
-    "artistId": "110e8300229932554400",
-    "artistName": "Pink Floyd",
+    "_id": "110e8300229932554400",
+    "name": "Pink Floyd",
     "description": "English rock band that achieved international acclaim with their progressive and psychedelic music.",
     "imageURL": "http://www.billboard.com/files/styles/promo_650/public/stylus/1251869-pink-floyd-reunions-617-409.jpg"
   },
   {
-    "artistId": "11032be3664400a71600",
-    "artistName": "Radiohead",
+    "_id": "11032be3664400a71600",
+    "name": "Radiohead",
     "description": " English rock band from Abingdon, Oxfordshire, formed in 1985",
     "imageURL": "http://www.wired.com/images_blogs/photos/uncategorized/2007/10/01/radiohead.jpg"
   }

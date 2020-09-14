@@ -1,15 +1,15 @@
 
 [
   {
-    "songId": "550e8400446655440000",
-    "songTitle": "A Celtic Dream"
+    "_id": "550e8400446655440000",
+    "title": "A Celtic Dream"
   },
   {
-    "songId": "550e8400446655440111",
-    "songTitle": "The North Sea"
+    "_id": "550e8400446655440111",
+    "title": "The North Sea"
   },
   {
-    "songId": "550e8400446655440222",
-    "songTitle": "Lament"
+    "_id": "550e8400446655440222",
+    "title": "Lament"
   }
 ]
