@@ -29,10 +29,10 @@ router.get('/song/:id/update',auth, song_controller.song_update_get);
 router.get('/song/:id/update',auth, song_controller.song_update_post);
 
 //GET for song detail
-router.get('/song/:id', song_controller.song_detail);
+router.get('/song/:id', auth, song_controller.song_detail);
 
 //GET for song list
-router.get('/songs', song_controller.song_list);
+router.get('/songs', auth, song_controller.song_list);
 
 /// Artist Routes 
 
@@ -55,10 +55,10 @@ router.get('/artist/:id/update',auth, artist_controller.artist_update_get);
 router.post('/artist/:id/update',auth, artist_controller.artist_update_post);
 
 // GET request for one artist.
-router.get('/artist/:id', artist_controller.artist_detail);
+router.get('/artist/:id', auth, artist_controller.artist_detail);
 
 // GET request for list of all artists.
-router.get('/artists', artist_controller.artist_list);
+router.get('/artists', auth, artist_controller.artist_list);
 
 
 //User
