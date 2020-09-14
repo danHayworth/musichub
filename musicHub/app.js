@@ -7,6 +7,7 @@ var helmet = require('helmet');
 var compression = require('compression');
 var hubRouter = require('./routes/hub')
 var indexRouter = require('./routes/index');
+require("dotenv").config();
 
 
 
