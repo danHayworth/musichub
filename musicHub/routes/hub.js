@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
+const User = require('../models/userModel');
 
 // Require controller modules.
 var song_controller = require('../controllers/songController');
 var artist_controller = require('../controllers/artistController');
-
+var user_controller = require('../controllers/userController');
 
 // Song Routes
 router.get('/', song_controller.index);
@@ -59,6 +60,14 @@ router.get('/artist/:id', artist_controller.artist_detail);
 // GET request for list of all artists.
 router.get('/artists', artist_controller.artist_list);
 
+
+//User
+router.post('/user/signup', user_controller.createNewUser);
+
+router.post('/user/login', user_controller.createLogin);
+
+
+router.post('/user/:userId', user_controller.deleteUser);
 
 
 
