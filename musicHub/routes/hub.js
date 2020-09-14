@@ -62,7 +62,11 @@ router.get('/artists', auth, artist_controller.artist_list);
 
 
 //User
+router.get('/user/signup', user_controller.user_create_get);
+
 router.post('/user/signup', user_controller.createNewUser);
+
+router.get('/user/login', user_controller.user_login_get);
 
 router.post('/user/login', user_controller.createLogin);
 
