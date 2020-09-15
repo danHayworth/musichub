@@ -10,7 +10,7 @@ exports.user_create_get = function(req, res, next) {
     
 };
 
-exports.createNewUser = (req, res, next) => {
+exports.user_create_post = (req, res, next) => {
     User.find({email: req.body.email})
     .exec()
     .then(user => {
@@ -63,7 +63,7 @@ exports.user_login_get = function(req, res, next) {
 };
 
 
-exports.createLogin = (req, res, next) => {
+exports.user_login_post = (req, res, next) => {
     User.find({email: req.body.email})
     .exec()
     .then(user => {
@@ -108,7 +108,7 @@ exports.createLogin = (req, res, next) => {
 };  
 
 
-exports.deleteUser = (req, res, next) => {
+exports.user_delete_post = (req, res, next) => {
     User.remove({_id: req.params.userId})
         .exec()
         .then(res => {
