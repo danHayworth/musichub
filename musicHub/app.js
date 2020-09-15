@@ -13,7 +13,7 @@ require("dotenv").config();
 
 var app = express();
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://danHayworth:danHayworth@music-hub-cluster.vghqx.mongodb.net/music-hub?retryWrites=true&w=majority';
+var mongoDB = process.env.MONGO_DB;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true  });
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
