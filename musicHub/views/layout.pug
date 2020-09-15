@@ -11,8 +11,8 @@ html(lang='en')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     nav.w3-bar.w3-border.w3-light-grey( role="navigation" )
-      .w3-bar-item.w3-text-grey Auth0 - NodeJS
-      a(href="/").w3-bar-item.w3-button Home
+      .w3-bar-item.w3-text-grey API JWT - NodeJS
+      a(href="/").w3-bar-item.w3-button
       if locals.user
         a(href="/user" id="profileDropDown").w3-bar-item.w3-button Profile
         a(id="qsLogoutBtn" href="/hub/user/logout").w3-bar-item.w3-button Log Out

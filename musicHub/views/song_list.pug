@@ -1,15 +1,10 @@
 extends layout
 
 block content
-.w3-container
-    if locals.user
-      h4 You are logged in!
-    else
-      h4 You are not logged in! Please #[a(href="/login") Log In] to continue.
+
   h1= title
   
   ul
-    - song_list.sort(function(a, b) {let textA = a.title.toUpperCase(); let textB = b.title.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;});
     each song in song_list
       li 
         a(href=song.url) #{song.title} 
