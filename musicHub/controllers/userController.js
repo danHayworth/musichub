@@ -2,6 +2,7 @@ const User = require('../models/userModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 var mongoose = require('mongoose');
+var async = require('async');
 
 
 // Display Song create form on GET.
@@ -124,4 +125,23 @@ exports.user_delete_post = (req, res, next) => {
         });
 };
 
+exports.user_detail = function(req, res, next) {
+
+    async.parallel({
+        user: function(callback) {
+            User.findById(req.params.id)
+                .exec(callback)
+        },
+    }, function(err, results) {
+        if (err) { return next(err); } // Error in API usage.
+        if (results.user==null) { // No results.
+            var err = new Error('User not found');
+            err.status = 404;
+            return next(err);
+        }
+        // Successful, so render.
+        res.render('user_detail', { title: results.user.email, user: results.user} );
+    });
+
+};
     

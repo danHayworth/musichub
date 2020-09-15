@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
         next();
     } catch (error) {
         return res.status(401).json({
-            message: 'Authentication failed 3'
+            message: 'You are not logged in or authentication failed.'
         });
     }
 };

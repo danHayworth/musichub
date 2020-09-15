@@ -227,6 +227,7 @@ exports.song_update_post = [
                 artists: function(callback) {
                     Artist.find(callback);
                 },
+               
             }, function(err, results) {
                 if (err) { return next(err); }
                 res.render('song_form', { title: 'Update Song',artists: results.artists, song: song, errors: errors.array() });
