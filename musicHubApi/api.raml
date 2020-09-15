@@ -89,7 +89,7 @@ traits:
       exampleCollection: !include examples/songs.sample
   get:
     is:
-          searchable: {description: "with valid searchable fields: songTitle", example: "[\"songTitle\", \"A Celtic\", \"like\"]"}
+          searchable: {description: "with valid searchable fields: title", example: "[\"title\", \"A Celtic\", \"like\"]"}
 
   /{songId}:
     type:
@@ -113,7 +113,7 @@ traits:
       exampleCollection: !include examples/artists.sample
   get:
     is:
-      searchable: {description: "with valid searchable fields: artistName", example: "[\"artistName\", \"Michele\", \"equals\"]"}
+      searchable: {description: "with valid searchable fields: name", example: "[\"name\", \"Michele\", \"equals\"]"}
 
   /{artistId}:
     type:
